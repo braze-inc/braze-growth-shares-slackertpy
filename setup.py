@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.1.0",
     author="Maciej Olko",
     description="Crete and send Slack messages and alerts through a webhook",
-    url="https://github.com/macolko/braze-growth-shares-slackertpy",
+    url="https://github.com/braze-inc/braze-growth-shares-slackertpy",
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=setuptools.find_packages(),
