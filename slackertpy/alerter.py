@@ -1,11 +1,8 @@
 import json
 import requests
 from typing import Dict
-import logging
 
 from slackertpy.level import Level
-
-logging.basicConfig(level=logging.ERROR)
 
 
 class Alerter:
