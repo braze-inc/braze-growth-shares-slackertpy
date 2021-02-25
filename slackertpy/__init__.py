@@ -4,5 +4,5 @@ from slackertpy.level import Level
 from slackertpy import templates
 from slackertpy import blocks
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __all__ = [Alerter, Level, MessageBuilder, templates, blocks]

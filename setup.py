@@ -5,7 +5,7 @@ with open("README.md", "r") as readme:
 
 setuptools.setup(
     name="slackertpy",
-    version="0.1.0",
+    version="0.1.1",
     author="Maciej Olko",
     description="Crete and send Slack messages and alerts through a webhook",
     url="https://github.com/braze-inc/braze-growth-shares-slackertpy",
