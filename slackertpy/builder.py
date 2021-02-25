@@ -15,7 +15,7 @@ class MessageBuilder:
     def add_divider(self) -> None:
         self.content.append(blocks.Divider().to_slack())
 
-    def add_markdown_text(self, text: str) -> None:
+    def add_field_text(self, text: str) -> None:
         if not text:
             return
 
@@ -23,7 +23,7 @@ class MessageBuilder:
         mkd_section.add_field_text(text)
         self.add_section(mkd_section)
 
-    def add_plain_text(self, text: str) -> None:
+    def add_section_text(self, text: str) -> None:
         if not text:
             return
 

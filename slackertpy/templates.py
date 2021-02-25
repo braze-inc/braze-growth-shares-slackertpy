@@ -4,7 +4,8 @@ from slackertpy import builder, blocks
 
 def notification(*, text: str, title: str = None):
     b = builder.MessageBuilder()
-    b.add_markdown_text(text)
+    
+    b.add_section_text(text)
     if title:
         b.add_header(title)
     return b.build()
@@ -15,7 +16,7 @@ def job_start(*, title: str = None, desc: str = None, overview: Dict = None):
     if title:
         b.add_header(title)
     if desc:
-        b.add_plain_text(desc)
+        b.add_section_text(desc)
     if overview:
         _add_section_from_hash(b, overview)
 
@@ -28,9 +29,9 @@ def job_finish(*, title: str = None, desc: str = None, result: str = None,
     if title:
         b.add_header(title)
     if desc:
-        b.add_plain_text(desc)
+        b.add_section_text(desc)
     if result:
-        b.add_markdown_text(f"*Result*: {result}")
+        b.add_field_text(f"*Result*: {result}")
     if overview:
         _add_section_from_hash(b, overview)
 
@@ -43,9 +44,9 @@ def job_executed(*, title: str = None, desc: str = None, result: str = None,
     if title:
         b.add_header(title)
     if desc:
-        b.add_plain_text(desc)
+        b.add_section_text(desc)
     if result:
-        b.add_markdown_text(f"*Result*: {result}")
+        b.add_field_text(f"*Result*: {result}")
     if overview:
         _add_section_from_hash(b, overview)
     if stats:
@@ -65,8 +66,8 @@ def job_error(*, title: str, error: str, notify_user_ids: List[str] = None,
     if notify_user_ids:
         b.notify_users(notify_user_ids)
     b.add_divider()
-    b.add_markdown_text('*Result*: Fail')
-    b.add_markdown_text(f"*Error Output*:\n```{error}```")
+    b.add_field_text('*Result*: Fail')
+    b.add_field_text(f"*Error Output*:\n```{error}```")
     if extra:
         _add_section_from_hash(b, extra)
 
